@@ -1,5 +1,5 @@
 <h1>All time machines available</h1>
 
 <% @machines.each do |machine| %>
-  <%= machine.name %>
+  <%= link_to machine.name, machine_path(machine)%>
 <% end %>
