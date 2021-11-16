@@ -2,6 +2,7 @@ class MachinesController < ApplicationController
   before_action :set_machine, only: [:show, :edit, :update, :destroy]
   def index
     @machines = Machine.all
+    @machines = policy_scope(Machine)
   end
 
   def show
@@ -9,6 +10,7 @@ class MachinesController < ApplicationController
 
   def new
     @machine = Machine.new
+    authorize @machine
   end
 
   def create
@@ -16,6 +18,7 @@ class MachinesController < ApplicationController
     @machine.user = current_user
     @machine.save!
     redirect_to machine_path(@machine)
+    authorize @machine
   end
 
   def edit
@@ -24,20 +27,23 @@ class MachinesController < ApplicationController
   def update
     @machine.update(machine_params)
     redirect_to machine_path(@machine)
+    authorize @machine
   end
 
   def destroy
     @machine.destroy
     redirect_to machines_path
+    authorize @machine
   end
 
   private
 
   def set_machine
     @machine = Machine.find(params[:id])
+    authorize @machine
   end
 
   def machine_params
-    params.require(:machine).permit(:name, :details, :period_century, :period_specific, :country, :price)
+    params.require(:machine).permit(:name, :details, :period_century, :period_specific, :country, :price, photos: [])
   end
 end
