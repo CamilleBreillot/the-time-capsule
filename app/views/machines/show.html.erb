@@ -5,6 +5,10 @@
 <p>Country you will visit: <%= @machine.country %></p>
 <p>Price per day: <%= @machine.price %> euros</p>
 
-<%= link_to "Edit this machine", edit_machine_path %> |
 <%= link_to "Back to list", machines_path %> |
-<%= link_to "Delete", machine_path(@machine), method: :delete, data: { confirm: "Are you sure?" } %>
+<% if policy(@machine).edit? %>
+  <%= link_to "Edit this machine", edit_machine_path %> |
+<% end  %>
+<% if policy(@machine).destroy? %>
+  <%= link_to "Delete", machine_path(@machine), method: :delete, data: { confirm: "Are you sure?" } %>
+<% end %>
