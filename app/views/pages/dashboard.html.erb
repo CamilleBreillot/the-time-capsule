@@ -1,5 +1,26 @@
-<div class="container ">
-  <h1>Pages#dashboard</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
-  <h1>Hellooooooooooooooooooo <%= current_user.first_name if user_signed_in? %>!</h1>
+<div class="container">
+  <h1 class="title-dashboard" >Welcome to your dashboard <%= current_user.first_name if user_signed_in? %>!</h1>
+
+  <div class="dashboard-part1">
+    <p>Time machine Trips (traveler)</p>
+    <div class="card-product">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="card-product-infos">
+        <h2>Product name</h2>
+        <p>Product description with <strong>relevant info</strong> only.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard-part2">
+    <p>Time travel machines (owner)</p>
+    <div class="card-product">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="card-product-infos">
+        <h2>Product name</h2>
+        <p>Product description with <strong>relevant info</strong> only.</p>
+      </div>
+    </div>
+  </div>
+
 </div>
