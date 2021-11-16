@@ -1,0 +1,52 @@
+.card-machine {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 2%;
+}
+
+.card-machine > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-machine a {
+  text-decoration: none;
+}
+
+.card-machine li {
+  width: 100%;
+}
+
+.card-machine h2 {
+  font-size: 18px;
+  font-weight: bolder;
+  margin: 0;
+}
+
+.card-machine p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-machine .card-machine-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-machine-infos .card-machine-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+.card-machine span {
+  font-size: 18px ;
+}
