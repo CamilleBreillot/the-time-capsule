@@ -35,8 +35,13 @@ gem 'simple_form'
 # DEVISE
 gem 'devise'
 
+
+# Pundit
+gem 'pundit'
+
 # FAKER
 gem 'faker'
+
 
 group :development, :test do
   gem 'pry-byebug'

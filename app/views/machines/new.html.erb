@@ -1,11 +1,13 @@
-<h1>Add a new machine</h1>
+<div class="container">
+  <h1>Add a new machine</h1>
 
-<%= simple_form_for(@machine) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :details %>
-    <%= f.input :period_century %>
-    <%= f.input :period_specific %>
-    <%= f.input :price %>
-    <%= f.input :country %>
-    <%= f.submit "Create machine" %>
-  <% end %>
+  <%= simple_form_for(@machine) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :details %>
+      <%= f.input :period_century %>
+      <%= f.input :period_specific %>
+      <%= f.input :price %>
+      <%= f.input :country %>
+      <%= f.submit "Create machine", class:"btn btn-secondary" %>
+    <% end %>
+</div>
