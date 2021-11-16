@@ -35,6 +35,9 @@ gem 'simple_form'
 # DEVISE
 gem 'devise'
 
+# FAKER
+gem 'faker'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
