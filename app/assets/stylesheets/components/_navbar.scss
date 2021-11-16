@@ -1,8 +1,21 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: #060B66;
-  color: white;
   position: center;
+  margin: 0 auto;
+  a {
+    color: white!important;
+  }
+}
+
+.navbar-brand {
+  margin: 0 auto;
+}
+
+#navbarSupportedContent {
+  display: block;
+  position: absolute;
+  right: 10px;
 }
 
 .navbar-lewagon .navbar-brand img {

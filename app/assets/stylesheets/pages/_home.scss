@@ -1,15 +1,4 @@
 // Specific CSS for your home-page
 .container {
-  padding: 0;
-  height: 40vh;
-}
-
-.banner {
-  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("https://source.unsplash.com/featured/?time,travel");
-  margin-top: 58px;
-  height: 500px;
-  background-position: center;
-  background-size: cover;
-  object-fit: cover;
-  background-repeat: no-repeat;
+  margin: auto;
 }
