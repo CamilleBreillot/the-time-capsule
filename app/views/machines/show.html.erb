@@ -48,42 +48,11 @@
       </div>
 
      <div class="cards-grid">
-        <div class="card-grid" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/rio)">
-          Rio
-        </div>
-
-        <div class="card-grid" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/berlin)">
-          Berlin
-        </div>
-
-        <div class="card-grid" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/shanghai)">
-          Shanghai
-        </div>
-
-        <div class="card-grid" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/barcelona)">
-          Barcelona
-        </div>
-
-        <div class="card-grid" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/paris)">
-          Paris
-        </div>
-
-        <div class="card-grid" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/london)">
-          London
-        </div>
-
-        <div class="card-grid" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/melbourne)">
-          Melbourne
-        </div>
-
-        <div class="card-grid" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/marseille)">
-          Marseille
-        </div>
-
-        <div class="card-grid" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/buenos-aires)">
-          Buenos Aires
-        </div>
-      </div>
+        <% @machine.photos.each do |photo| %>
+          <div class="card-grid" style="background-image: url('<%= cl_image_path photo.key, height: 300, width: 400, crop: :fill %>')">
+          </div>
+        <% end %>
+     </div>
 
   <div class="d-flex justify-content-center mt-4">
     <%= link_to "Back to list", machines_path, class:"btn btn-ghost" %>
