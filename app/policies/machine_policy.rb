@@ -1,8 +1,8 @@
 class MachinePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      # scope.all # => allows you to see al restaurant even the one created by other user than you / 'scope.all' equivalent to 'Restaurants.all'
-      scope.where(user: user) #user is refering to user in initializer of the 'application_policy.rb'
+      scope.all # => allows you to see al restaurant even the one created by other user than you / 'scope.all' equivalent to 'Restaurants.all'
+      # scope.where(user: user) #user is refering to user in initializer of the 'application_policy.rb'
     end
   end
 
