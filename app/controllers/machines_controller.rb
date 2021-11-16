@@ -6,9 +6,11 @@ class MachinesController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
   end
 
   def new
+    @booking = Booking.new
     @machine = Machine.new
     authorize @machine
   end

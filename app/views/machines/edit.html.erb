@@ -1,11 +1,13 @@
-<h1>Change information of your machine</h1>
+<div class="container mt-4 w-50">
+  <h2 class="border-bottom pb-2 mb-4" style="color: #060B66">Change your machine's information</h2>
 
-<%= simple_form_for(@machine) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :details %>
-    <%= f.input :period_century %>
-    <%= f.input :period_specific %>
-    <%= f.input :price %>
-    <%= f.input :country %>
-    <%= f.submit "Update information" %>
-  <% end %>
+  <%= simple_form_for(@machine) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :details, label:"Details: describe your time travel" %>
+      <%= f.input :period_century, label:"Century" %>
+      <%= f.input :period_specific, label:"Year" %>
+      <%= f.input :price, label:"Price per day" %>
+      <%= f.input :country, label:"Country of travel" %>
+      <%= f.submit "Update your machine", class:"btn-ghost" %>
+    <% end %>
+</div>
