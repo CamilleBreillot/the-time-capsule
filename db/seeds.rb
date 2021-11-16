@@ -3,6 +3,7 @@
 require "open-uri"
 
 puts "Cleaning database..."
+Booking.destroy_all
 Machine.destroy_all
 User.destroy_all
 
@@ -22,7 +23,7 @@ file3 = URI.open("https://d2v9ipibika81v.cloudfront.net/uploads/sites/50/2016/06
 trump.photos.attach(io: file3, filename: 'file3.jpeg', content_type: 'image/jpeg')
 
 hippy = Machine.create(user: camille, name: "Hippies in 70s", country: "US", price: 450, period_century: 20, period_specific: 1975, details: "Live like a hippy!" )
-file4 = URI.open("https://www.moustique.be/wp-content/uploads/2019/06/870x489_woodstock-2019-88880_0.jpg")
+file4 = URI.open("https://images.ladepeche.fr/api/v1/images/view/6104404bd286c218ec5d69c7/large/image.jpg?v=1")
 hippy.photos.attach(io: file4, filename: 'file4.jpeg', content_type: 'image/jpeg')
 file5 = URI.open("https://www.generations-plus.ch/sites/default/files/styles/image_principal_article/public/article/field/image/nom_ketane_race_batard_croisement_entre_un_boxer_et_un_labrador_sexe_male_age_10_ans_5.png?itok=eSxvCtVl")
 hippy.photos.attach(io: file5, filename: 'file5.jpeg', content_type: 'image/jpeg')
@@ -44,6 +45,9 @@ file11 = URI.open("https://ogden_images.s3.amazonaws.com/www.lockhaven.com/image
 war.photos.attach(io: file11, filename: 'file11.jpeg', content_type: 'image/jpeg')
 file12 = URI.open("https://www.thoughtco.com/thmb/8ECQKF4hNFwia-U3uA8TXBPsZbk=/4151x2335/smart/filters:no_upscale()/new-yorkers-celebrate-v-e-day-514877528-5b93085c46e0fb0025701c7d.jpg")
 war.photos.attach(io: file12, filename: 'file12.jpeg', content_type: 'image/jpeg')
+
+booking1 = Booking.create!(departure_date: "15/12/2021", arrival_date: "31/12/2021", booking_price: 18_000,
+                          booking_confirmed: true, user_id: margot.id, machine_id: war.id)
 
 puts "Finished!"
 

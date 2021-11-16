@@ -1,4 +1,4 @@
-<div class="bannershow mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.4)), url(https://ak.picdn.net/shutterstock/videos/9721421/thumb/1.jpg);">
+<div class="bannershow mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.4)), url('<%= cl_image_path @machine.photos.first.key, height: 300, width: 400, crop: :fill %>');">
   <div class="container">
     <h1><%= @machine.name %></h1>
     <p>Get ready for the experience of a lifetime</p>
@@ -55,15 +55,12 @@
      </div>
 
   <div class="d-flex justify-content-center mt-4">
-    <%= link_to "Back to list", machines_path, class:"btn btn-ghost" %>
-   <h1> CODE AYMERIC !!!! </h1>
-      <%= link_to "Back to list", machines_path %> |
-  <% if policy(@machine).edit? %>
-    <%= link_to "Edit this machine", edit_machine_path %> |
-  <% end  %>
-  <% if policy(@machine).destroy? %>
-    <%= link_to "Delete", machine_path(@machine), method: :delete, data: { confirm: "Are you sure?" } %>
-  <% end %>
+    <p><%= link_to "Back to list", machines_path, class:"btn btn-ghost" %></p>
+    <% if policy(@machine).edit? %>
+      <p><%= link_to "Edit this machine", edit_machine_path, class:"btn btn-ghost mx-4" %></p>
+    <% end  %>
+    <% if policy(@machine).destroy? %>
+      <p><%= link_to "Delete", machine_path(@machine), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-ghost" %></p>
+    <% end %>
   </div>
 </div>
-
