@@ -1,7 +1,8 @@
 .card-grid {
   background-size: cover;
   background-position: center;
-  height: 150px;
+  height: 300px;
+  width: 300px;
   border-radius: 1px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   display: flex;
@@ -15,7 +16,7 @@
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 16px;
   flex-grow: 1;
   padding: 16px;

@@ -44,6 +44,6 @@ class MachinesController < ApplicationController
   end
 
   def machine_params
-    params.require(:machine).permit(:name, :details, :period_century, :period_specific, :country, :price)
+    params.require(:machine).permit(:name, :details, :period_century, :period_specific, :country, :price, photos: [])
   end
 end
