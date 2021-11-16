@@ -1,5 +1,5 @@
 class MachinesController < ApplicationController
-  before_action :set_machine, only: [:show]
+  before_action :set_machine, only: [:show, :edit, :update, :destroy]
   def index
     @machines = Machine.all
   end
@@ -15,7 +15,20 @@ class MachinesController < ApplicationController
     @machine = Machine.new(machine_params)
     @machine.user = current_user
     @machine.save!
-    redirect_to root_path
+    redirect_to machine_path(@machine)
+  end
+
+  def edit
+  end
+
+  def update
+    @machine.update(machine_params)
+    redirect_to machine_path(@machine)
+  end
+
+  def destroy
+    @machine.destroy
+    redirect_to machines_path
   end
 
   private
