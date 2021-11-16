@@ -87,5 +87,14 @@
 
   <div class="d-flex justify-content-center mt-4">
     <%= link_to "Back to list", machines_path, class:"btn btn-ghost" %>
+   <h1> CODE AYMERIC !!!! </h1>
+      <%= link_to "Back to list", machines_path %> |
+  <% if policy(@machine).edit? %>
+    <%= link_to "Edit this machine", edit_machine_path %> |
+  <% end  %>
+  <% if policy(@machine).destroy? %>
+    <%= link_to "Delete", machine_path(@machine), method: :delete, data: { confirm: "Are you sure?" } %>
+  <% end %>
   </div>
 </div>
+

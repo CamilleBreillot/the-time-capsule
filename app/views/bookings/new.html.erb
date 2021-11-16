@@ -1,0 +1,9 @@
+<h1>Perform a booking</h1>
+
+<%= simple_form_for [@machine, @booking] do |f| %>
+    <%= f.input :arrival_date %>
+    <%= f.input :departure_date %>
+    <%= f.input :booking_price %>
+    <%= f.input :booking_confirmed? %>
+    <%= f.submit "Create a booking" %>
+  <% end %>
