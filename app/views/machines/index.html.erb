@@ -1,5 +1,29 @@
-<h1>All time machines available</h1>
 
-<% @machines.each do |machine| %>
-  <%= link_to machine.name, machine_path(machine)%>
-<% end %>
+
+<div class="container mt-4">
+<h1>Available time machines</h1>
+<p class="border-bottom pb-3"><%= @machines.length %> machines available for your dates</p>
+  <ul>
+    <div class="row my-5">
+      <% @machines.each do |machine| %>
+        <div class="col-4">
+          <div class="card-machine">
+            <img src="http://entredeuxguerres.e-monsite.com/medias/images/lunchatopaskyscraper1932-1.jpg">
+            <div class="card-machine-infos">
+              <li class="list-unstyled">
+                <h2 class="mb-3"><%= link_to machine.name, machine_path(machine) %></h2>
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <p><strong>Century:</strong> <%= machine.period_century %>th</p>
+                    <p><strong>Year of travel:</strong> <%= machine.period_specific %></p>
+                  </div>
+                  <p><strong><span><%= machine.price %>€<span></strong> / per day</p>
+                </div>
+              </li>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </ul>
+</div>
