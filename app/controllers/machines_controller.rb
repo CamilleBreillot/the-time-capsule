@@ -18,8 +18,11 @@ class MachinesController < ApplicationController
   def create
     @machine = Machine.new(machine_params)
     @machine.user = current_user
-    @machine.save!
-    redirect_to machine_path(@machine)
+    if @machine.save
+      redirect_to machine_path(@machine)
+    else
+      render "machines/new"
+    end
     authorize @machine
   end
 
