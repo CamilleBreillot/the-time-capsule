@@ -30,7 +30,7 @@ hippy.photos.attach(io: file5, filename: 'file5.jpeg', content_type: 'image/jpeg
 file6 = URI.open("https://i.cbc.ca/1.5245615.1565722610!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_940/woodstock.jpg")
 hippy.photos.attach(io: file6, filename: 'file6.jpeg', content_type: 'image/jpeg')
 
-louis = Machine.create(user: sophie, name: "Party with Louis XIV", place: "FR", price: 10_000, period_century: 17, period_specific: 1690, details: "Gala au Chateau de Versailles!" )
+louis = Machine.create(user: sophie, name: "Party with Louis XIV", place: "FR", price: 1000, period_century: 17, period_specific: 1690, details: "Gala au Chateau de Versailles!" )
 file7 = URI.open("https://www.toutelatele.com/IMG/arton100227.jpg")
 louis.photos.attach(io: file7, filename: 'file7.jpeg', content_type: 'image/jpeg')
 file8 = URI.open("https://resize-elle.ladmedia.fr/rcrop/1098,768/img/var/plain_site/storage/images/loisirs/series/versailles-on-a-vu-la-nouvelle-serie-de-canal-3011359/57681433-1-fre-FR/Versailles-on-a-vu-la-nouvelle-serie-de-Canal.jpg")
@@ -46,8 +46,8 @@ war.photos.attach(io: file11, filename: 'file11.jpeg', content_type: 'image/jpeg
 file12 = URI.open("https://www.thoughtco.com/thmb/8ECQKF4hNFwia-U3uA8TXBPsZbk=/4151x2335/smart/filters:no_upscale()/new-yorkers-celebrate-v-e-day-514877528-5b93085c46e0fb0025701c7d.jpg")
 war.photos.attach(io: file12, filename: 'file12.jpeg', content_type: 'image/jpeg')
 
-booking1 = Booking.create!(departure_date: "15/12/2021", arrival_date: "31/12/2021", booking_price: 18_000,
-                          booking_confirmed: true, user_id: margot.id, machine_id: war.id)
+#booking1 = Booking.create!(departure_date: "15/12/2021", arrival_date: "31/12/2021", booking_price: 18_000,
+ #                         booking_confirmed: true, user_id: margot.id, machine_id: war.id)
 
 puts "Finished!"
 
