@@ -1,14 +1,14 @@
-<div class="container">
-  <h1>Add a new machine</h1>
+<div class="container mt-4 w-50">
+  <h2 class="border-bottom pb-2 mb-4" style="color: #060B66">Add a new machine</h2>
 
   <%= simple_form_for(@machine) do |f| %>
       <%= f.input :name %>
       <%= f.input :details %>
-      <%= f.input :period_century %>
-      <%= f.input :period_specific %>
-      <%= f.input :price %>
-      <%= f.input :country %>
+      <%= f.input :period_century, label:"Century" %>
+      <%= f.input :period_specific, label:"Year of travel" %>
+      <%= f.input :price, label:"Price per day"  %>
+      <%= f.input :country, label:"Country of travel"  %>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-      <%= f.submit "Create machine", class:"btn btn-secondary" %>
+      <%= f.submit "Create your machine", class:"btn-ghost" %>
     <% end %>
 </div>
