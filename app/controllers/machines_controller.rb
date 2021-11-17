@@ -3,6 +3,12 @@ class MachinesController < ApplicationController
   def index
     @machines = Machine.all
     @machines = policy_scope(Machine)
+    @markers = @machines.geocoded.map do |machine|
+      {
+        lat: machine.latitude,
+        lng: machine.longitude
+      }
+    end
   end
 
   def show
@@ -12,6 +18,7 @@ class MachinesController < ApplicationController
   def new
     @booking = Booking.new
     @machine = Machine.new
+    @places = CS.countries.values #lists countries from the gem 'city-state'
     authorize @machine
   end
 
@@ -49,6 +56,6 @@ class MachinesController < ApplicationController
   end
 
   def machine_params
-    params.require(:machine).permit(:name, :details, :period_century, :period_specific, :country, :price, photos: [])
+    params.require(:machine).permit(:name, :details, :period_century, :period_specific, :place, :price, photos: [])
   end
 end

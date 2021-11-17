@@ -7,7 +7,7 @@
       <%= f.input :period_century, label:"Century" %>
       <%= f.input :period_specific, label:"Year of travel" %>
       <%= f.input :price, label:"Price per day"  %>
-      <%= f.input :country, label:"Country of travel"  %>
+      <%= f.input :place, collection: @places %>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <%= f.submit "Create your machine", class:"btn-ghost" %>
     <% end %>
