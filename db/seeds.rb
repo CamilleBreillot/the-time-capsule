@@ -22,7 +22,7 @@ trump.photos.attach(io: file2, filename: 'file2.jpeg', content_type: 'image/jpeg
 file3 = URI.open("https://d2v9ipibika81v.cloudfront.net/uploads/sites/50/2016/06/whitehouse.jpg")
 trump.photos.attach(io: file3, filename: 'file3.jpeg', content_type: 'image/jpeg')
 
-hippy = Machine.create(user: camille, name: "Hippies in 70s", place: "US", price: 450, period_century: 20, period_specific: 1975, details: "Live like a hippy!" )
+hippy = Machine.create(user: camille, name: "Hippies in 70s", place: "SP", price: 450, period_century: 20, period_specific: 1975, details: "Live like a hippy!" )
 file4 = URI.open("https://images.ladepeche.fr/api/v1/images/view/6104404bd286c218ec5d69c7/large/image.jpg?v=1")
 hippy.photos.attach(io: file4, filename: 'file4.jpeg', content_type: 'image/jpeg')
 file5 = URI.open("https://www.generations-plus.ch/sites/default/files/styles/image_principal_article/public/article/field/image/nom_ketane_race_batard_croisement_entre_un_boxer_et_un_labrador_sexe_male_age_10_ans_5.png?itok=eSxvCtVl")
