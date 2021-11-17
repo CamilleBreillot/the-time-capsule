@@ -46,8 +46,14 @@ war.photos.attach(io: file11, filename: 'file11.jpeg', content_type: 'image/jpeg
 file12 = URI.open("https://www.thoughtco.com/thmb/8ECQKF4hNFwia-U3uA8TXBPsZbk=/4151x2335/smart/filters:no_upscale()/new-yorkers-celebrate-v-e-day-514877528-5b93085c46e0fb0025701c7d.jpg")
 war.photos.attach(io: file12, filename: 'file12.jpeg', content_type: 'image/jpeg')
 
-#booking1 = Booking.create!(departure_date: "15/12/2021", arrival_date: "31/12/2021", booking_price: 18_000,
- #                         booking_confirmed: true, user_id: margot.id, machine_id: war.id)
+booking1 = Booking.create!(departure_date: "15/12/2021", arrival_date: "31/12/2021", booking_price: 18_000,
+                          booking_confirmed: true, user_id: margot.id, machine_id: war.id)
+booking2 = Booking.create!(departure_date: "15/12/2021", arrival_date: "31/12/2021", booking_price: 18_000,
+                          booking_confirmed: true, user_id: aymeric.id, machine_id: louis.id)
+booking3 = Booking.create!(departure_date: "15/12/2021", arrival_date: "31/12/2021", booking_price: 18_000,
+                          booking_confirmed: true, user_id: sophie.id, machine_id: hippy.id)
+booking4 = Booking.create!(departure_date: "15/12/2021", arrival_date: "31/12/2021", booking_price: 18_000,
+                          booking_confirmed: true, user_id: camille.id, machine_id: trump.id)
 
 puts "Finished!"
 
