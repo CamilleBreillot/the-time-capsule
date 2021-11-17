@@ -6,7 +6,8 @@ class MachinesController < ApplicationController
     @markers = @machines.geocoded.map do |machine|
       {
         lat: machine.latitude,
-        lng: machine.longitude
+        lng: machine.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { machine: machine })
       }
     end
   end
