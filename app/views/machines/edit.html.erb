@@ -4,8 +4,8 @@
   <%= simple_form_for(@machine) do |f| %>
       <%= f.input :name %>
       <%= f.input :details, label:"Details: describe your time travel" %>
-      <%= f.input :period_century, label:"Century" %>
-      <%= f.input :period_specific, label:"Year" %>
+      <%= f.input :period_century, label:"Century of travel" %>
+      <%= f.input :period_specific, label:"Year of travel" %>
       <%= f.input :price, label:"Price per day" %>
       <%= f.input :country, label:"Country of travel" %>
       <%= f.submit "Update your machine", class:"btn-ghost" %>
