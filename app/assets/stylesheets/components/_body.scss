@@ -1,0 +1,13 @@
+// .body {
+//     background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), asset_url("jake-blucker-ZGnC2gOvzKw-unsplash.jpg");
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     height: 600px;
+//     }
+
+.banner-bg {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), asset_url('space.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
+}
