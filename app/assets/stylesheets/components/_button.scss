@@ -14,6 +14,27 @@
   color: white;
 }
 
+
 .padding-killer {
   padding: 15px 24px;
+
+.btn-danger {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.btn-danger:hover {
+  opacity: 0.8;
+  color: white;
+}
+
+.btn-success {
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 1;
 }

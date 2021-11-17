@@ -42,6 +42,8 @@ gem 'pundit'
 # FAKER
 gem 'faker'
 
+gem "geocoder"
+
 
 group :development, :test do
   gem 'pry-byebug'
@@ -73,5 +75,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'country_select'
+gem 'city-state'
 
 gem 'cloudinary', '~> 1.16.0'
