@@ -35,6 +35,7 @@
     <div class="dashboard-part" id="dashboard-div2">
       <div>
         <h4>Your own machines</h4>
+        <p><%= link_to "Create a machine", new_machine_path, class:"btn btn-ghost" %></p>
       </div>
       <% @machines.each do |machine| %>
         <div class="card-product-dashboard">
