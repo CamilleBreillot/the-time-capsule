@@ -7,7 +7,7 @@
       <%= f.input :period_century %>
       <%= f.input :period_specific %>
       <%= f.input :price %>
-      <%= f.input :country %>
+      <%= f.input :place, collection: @places %>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <%= f.submit "Create machine", class:"btn btn-secondary" %>
     <% end %>

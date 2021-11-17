@@ -3,32 +3,41 @@
 <div class="container mt-4">
 <h1>Available time machines</h1>
 <p class="border-bottom pb-3"><%= @machines.length %> machines available for your dates</p>
-  <ul>
-    <div class="row my-5">
-      <% @machines.each do |machine| %>
-        <div class="col-4">
-          <div class="card-machine mb-4">
-            <% if machine.photos.attached? %>
-              <%= cl_image_tag machine.photos.first.key, height: 300, width: 400, crop: :fill %>
-            <% else %>
-              <%= cl_image_tag "", height: 300, width: 400, crop: :fill %>
-            <% end %>
+  <div class="container d-flex">
+    <div>
+      <ul>
+        <div class="row my-5">
+          <% @machines.each do |machine| %>
+            <div class="col-6">
+              <div class="card-machine mb-4">
+                <% if machine.photos.attached? %>
+                  <%= cl_image_tag machine.photos.first.key, height: 300, width: 400, crop: :fill %>
+                <% else %>
+                  <%= cl_image_tag "", height: 300, width: 400, crop: :fill %>
+                <% end %>
 
-            <div class="card-machine-infos">
-              <li class="list-unstyled">
-                <h2 class="mb-3"><%= link_to machine.name, machine_path(machine) %></h2>
-                <div class="d-flex justify-content-between">
-                  <div>
-                    <p><strong>Century:</strong> <%= machine.period_century %>th</p>
-                    <p><strong>Year of travel:</strong> <%= machine.period_specific %></p>
-                  </div>
-                  <p><strong><span><%= machine.price %>€<span></strong> / per day</p>
+                <div class="card-machine-infos">
+                  <li class="list-unstyled">
+                    <h2 class="mb-3"><%= link_to machine.name, machine_path(machine) %></h2>
+                    <div class="d-flex justify-content-between">
+                      <div>
+                        <p><strong>Century:</strong> <%= machine.period_century %>th</p>
+                        <p><strong>Year of travel:</strong> <%= machine.period_specific %></p>
+                      </div>
+                      <p><strong><span><%= machine.price %>€<span></strong> / per day</p>
+                    </div>
+                  </li>
                 </div>
-              </li>
+              </div>
             </div>
-          </div>
+          <% end %>
         </div>
-      <% end %>
+      </ul>
     </div>
-  </ul>
+    <div class="my-5 ps-3" style="width: 200px; height: 200px;"
+      data-controller="mapbox"
+      data-mapbox-markers-value="<%= @markers.to_json %>"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
 </div>
