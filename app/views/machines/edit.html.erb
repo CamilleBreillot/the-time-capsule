@@ -1,4 +1,4 @@
-<div class="container mt-4 w-50">
+<div class="container my-4 w-50">
   <h2 class="border-bottom pb-2 mb-4" style="color: #060B66">Change your machine's information</h2>
 
   <%= simple_form_for(@machine) do |f| %>
@@ -8,6 +8,7 @@
       <%= f.input :period_specific, label:"Year of travel" %>
       <%= f.input :price, label:"Price per day" %>
       <%= f.input :place, label:"Country of travel" %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <%= f.submit "Update your machine", class:"btn-ghost" %>
     <% end %>
 </div>
