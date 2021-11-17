@@ -1,5 +1,9 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [ :update, :destroy ]
+  before_action :set_booking, only: [ :show, :update, :destroy ]
+
+  def show
+    authorize @booking # for pundit
+  end
 
   def new
     @booking = Booking.new
@@ -13,7 +17,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.machine = @machine
     @booking.save!
-    redirect_to machines_path
+    redirect_to booking_path(@booking)
     authorize @booking # for pundit
   end
 
