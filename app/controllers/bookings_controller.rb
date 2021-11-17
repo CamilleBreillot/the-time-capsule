@@ -1,6 +1,10 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [ :update, :destroy ]
 
+  def index
+    @booking.all
+  end
+
   def new
     @booking = Booking.new
     @machine = Machine.find(params[:machine_id])
