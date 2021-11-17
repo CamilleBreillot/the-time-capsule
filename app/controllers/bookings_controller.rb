@@ -5,6 +5,10 @@ class BookingsController < ApplicationController
     authorize @booking # for pundit
   end
 
+  def index
+    @booking.all
+  end
+
   def new
     @booking = Booking.new
     @machine = Machine.find(params[:machine_id])
