@@ -5,3 +5,27 @@
 body {
   background-color: white;
 }
+ul {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+ a:hover {
+   color: #060B66;
+ }
+
+ .d-block {
+  height: 250px;
+  object-fit: cover;
+ }
+
+ .mapbox {
+    height: 720px;
+    border-radius: 4px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 195px;
+ }
