@@ -44,8 +44,12 @@ gem 'faker'
 
 gem "geocoder"
 
+
+gem 'pg_search', '~> 2.3.0'
+
 # Flat Pickr
 gem 'flatpickr'
+
 
 
 group :development, :test do

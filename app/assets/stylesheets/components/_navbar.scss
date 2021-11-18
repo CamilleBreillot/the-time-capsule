@@ -1,11 +1,18 @@
-.navbar-lewagon {
+.navbar {
+  background-color: #031069;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.navbar a{
+  color: white;
+}
+
+.navbar-nav {
+  background-color: #031069;
+  width: 350px;
   justify-content: space-between;
-  background: #060B66;
-  position: center;
-  margin: 0 auto;
-  a {
-    color: white!important;
-  }
+  font-size: 20px;
 }
 
 .navbar-brand {
@@ -15,7 +22,7 @@
 #navbarSupportedContent {
   display: block;
   position: absolute;
-  right: 10px;
+  right: 50px;
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -23,6 +30,22 @@
 }
 
 .dropdown-menu {
-  background-color: black;
+  box-shadow: rgba(113, 113, 113, 0.24) 0px 3px 8px;
+  background-color: #031069;
+  margin-left: 20px;
+}
 
+.dropdown-item {
+  background-color: #031069;
+  color: white;
+  font-size: 20px;
+}
+
+.dropdown-item:hover {
+  background-color: white;
+  color: #031069;
+}
+
+.nav-link {
+  color: #d5daf4!important;
 }
