@@ -39,7 +39,7 @@
       </div>
       <% @machines.each do |machine| %>
         <div class="card-product-dashboard">
-          <%= cl_image_tag machine.photos.first.key, height: 300, width: 400, crop: :fill %>
+          <%# <%= cl_image_tag machine.photos.first.key, height: 300, width: 400, crop: :fill %> %>
           <div class="d-flex justify-content-between align-items-center w-100" >
             <div class="card-product-infos-dashboard">
               <h2><%= link_to machine.name, machine_path(machine) %></h2>

@@ -7,30 +7,34 @@
   }
 </style> %> -->
 
-<div class="">
-  <div class="bannershow banner-bg">
-    <div class="container">
-      <div class="typewriter d-flex justify-content-center">
-        <div class="typewriter-text">Today is 17/11/2021... but go anywhere anytime...</div>
+
+<div class="bannershow banner-bg">
+
+<link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+<h1 class="tagline">You can go anywhere, anytime...</h1>
+<h1 class="tagline">Travel in
+  <span
+     class="txt-rotate mt-4"
+     data-period="2000"
+     data-rotate='[ "2021?", "1945?", "1650?", "2053?", "-2000?" ]'></span>
+</h1>
+  <div class="container my-4">
+    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+      <div class="search-form-control input-group d-flex">
+        <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="  Where do you want to go for you time travel?" />
+        <form action="/machines">
+          <!--<button name="button" type="submit" class="btn btn-ghost">
+            <i class="fas fa-search"></i> Search
+          </button>-->
+          <%= link_to machines_path, class: "btn btn-ghost padding-killer" do %>
+            <i class="fas fa-search"></i> Search
+          <% end %>
+        </form>
       </div>
-      <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-        <div class="search-form-control input-group d-flex">
-          <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Where do you want to go for you time travel?" />
-          <form action="/machines">
-            <!--<button name="button" type="submit" class="btn btn-ghost">
-              <i class="fas fa-search"></i> Search
-            </button>-->
-            <%= link_to machines_path, class: "btn btn-ghost padding-killer" do %>
-              <i class="fas fa-search"></i> Search
-            <% end %>
-          </form>
-        </div>
-        <% end %>
-          </div>
-          </div>
-          <div class="container-card">
-    </div>
+    <% end %>
   </div>
+</div>
+
 
 
   <!-- <div class="banner">
