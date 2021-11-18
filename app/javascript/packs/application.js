@@ -20,6 +20,7 @@ import "controllers"
 import "bootstrap"
 
 
+
 var TxtRotate = function (el, toRotate, period) {
   this.toRotate = toRotate;
   this.el = el;
@@ -76,3 +77,15 @@ window.onload = function () {
   css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
   document.body.appendChild(css);
 };
+
+// import flatpickr from 'flatpickr'
+// import 'flatpickr/dist/flatpickr.min.css'
+
+flatpickr(".datepciker",{
+
+});
+
+// Flaypickr
+import { initFlatpickr } from "../plugins/flatpickr";
+initFlatpickr();
+

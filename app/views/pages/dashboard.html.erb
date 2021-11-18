@@ -1,30 +1,63 @@
 <div class="container" style="min-height: 80vh">
   <h1 class="title-dashboard my-5" >Welcome to your dashboard <%= current_user.first_name if user_signed_in? %>!</h1>
   <div class="container">
+
+  <ul class="list-inline tabs-underlined">
+    <li>
+      <a href="#" class="tab-underlined active">Bookings</a>
+    </li>
+    <li>
+      <%= link_to "Requests", bookingrequest_path, class: "tab-underlined" %>
+    </li>
+    <li>
+      <%= link_to "Create a machine", new_machine_path, class: "tab-underlined" %>
+    </li>
+  </ul>
+
     <div class="dashboard-part" id="dashboard-div1">
       <div class="p">
-        <h4>All your bookings</h4>
+        <h4>Your upcoming trips</h4>
       </div>
-      <div class="card-list d-flex flex-column">
+      <div class="card-list d-flex flex-column" style="width: 900px">
         <% @bookings.each do |booking| %>
           <div class="card-product-dashboard w-100">
             <%= cl_image_tag booking.machine.photos.first.key, height: 300, width: 400, crop: :fill %>
             <div class="d-flex justify-content-between align-items-center w-100" >
               <div class="card-product-infos-dashboard ml-2">
-                <h2><%= link_to booking.machine.name, machine_path(booking.machine) %></h2>
+                <h2><%= link_to booking.machine.name, machine_path(booking.machine), class:"blue-link" %></h2>
                 <p> Your contact for this booking is <%= booking.machine.user.first_name %> <%= booking.machine.user.last_name %> </p>
                 <p> Booked at <%= booking.created_at %></p>
                 <p>Your booking number is <strong>#TC00<%=booking.id%></strong></p>
               </div>
               <div>
                 <% if booking.booking_confirmed? %>
-                  <p><%= link_to "Confirmed", dashboard_path, class:"btn btn-success"%></p>
+                  <div class="d-flex flex-column align-items-center">
+                    <p id="confirmed" class="mb-1">Confirmed</p>
+                    <i class="far fa-check-circle" style="color: green"></i>
+                  </div>
                 <% else %>
-                  <p><%= link_to "Pending", dashboard_path, class:"btn btn-ghost" %></p>
+                  <div class="d-flex flex-column align-items-center">
+                    <p id="pending" class="mb-1">Pending</p>
+                    <i class="far fa-question-circle" style="color: orange"></i>
+                  </div>
                 <% end %>
               </div>
-              <div>
-                <p><%= link_to "Cancel booking", dashboard_path, class:"btn btn-danger mx-3" %></p>
+              <div class="d-flex justify-content-around m-4" style="width: 90px">
+                <div class="d-flex flex-column align-items-center">
+                  <p>View</p>
+                  <%= link_to booking_path(booking),
+                      method: :get do  %>
+                      <i class="fas fa-eye pr-5" style="color: #031069"></i>
+                      <% end %>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                  <p>Delete</p>
+                  <%= link_to booking_path(booking),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } do  %>
+                    <i class="far fa-trash-alt" style="color: #031069"></i>
+                    <% end %>
+                </div>
               </div>
             </div>
           </div>
@@ -32,33 +65,5 @@
       </div>
     </div>
 
-    <div class="dashboard-part" id="dashboard-div2">
-      <div>
-        <h4>Your own machines</h4>
-        <p><%= link_to "Create a machine", new_machine_path, class:"btn btn-ghost" %></p>
-      </div>
-      <% @machines.each do |machine| %>
-        <div class="card-product-dashboard">
-          <%# <%= cl_image_tag machine.photos.first.key, height: 300, width: 400, crop: :fill %> %>
-          <div class="d-flex justify-content-between align-items-center w-100" >
-            <div class="card-product-infos-dashboard">
-              <h2><%= link_to machine.name, machine_path(machine) %></h2>
-              <p><%= machine.details %></p>
-              <p><strong>Century :</strong> <%= machine.period_century %>th</p>
-              <p><strong>Year of travel :</strong> <%= machine.period_specific %></p>
-            </div>
-            <div>
-              <h2><strong><%= machine.price %>€</strong></h2>
-            </div>
-            <div>
-              <p><%= link_to "Edit", edit_machine_path(machine), class:"btn btn-ghost" %></p>
-            </div>
-            <div>
-              <p><%= link_to "Delete", "#", class:"btn btn-danger mx-3" %></p>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
   </div>
 </div>

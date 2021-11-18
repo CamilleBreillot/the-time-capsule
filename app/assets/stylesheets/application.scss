@@ -14,6 +14,11 @@
 @import "pages/index";
 @import "pages/dashboard";
 
+
 .content-wrapper {
   min-height: calc(100vh - 70px - 80px);
 }
+
+@import "flatpickr/dist/flatpickr";
+@import "pages/info_window";
+

@@ -1,0 +1,99 @@
+<div class="container" style="min-height: 80vh">
+  <h1 class="title-dashboard my-5" >Welcome to your dashboard <%= current_user.first_name if user_signed_in? %>!</h1>
+  <div class="container">
+    <ul class="list-inline tabs-underlined">
+      <li>
+        <%= link_to "Bookings", dashboard_path, class: "tab-underlined" %>
+      </li>
+      <li>
+        <a href="#" class="tab-underlined active">Requests</a>
+      </li>
+      <li>
+        <%= link_to "Create a machine", new_machine_path, class: "tab-underlined" %>
+      </li>
+    </ul>
+
+    <div class="dashboard-part mb-4" id="dashboard-div2">
+      <div class="p">
+        <h4>Pending requests</h4>
+      </div>
+      <div class="card-list d-flex flex-column" style="width: 900px">
+        <% requested_bookings = [] %>
+        <% @machines.each do |machine| %>
+          <% requested_bookings << machine.bookings %>
+        <% end %>
+        <% requested_bookings = requested_bookings.flatten %>
+        <%# <% if requested_bookings.any? %>
+          <%# <p class="no-request">You have no pending requests</p> %>
+        <%# <% else %>
+          <% requested_bookings.each do |booking|%>
+            <% if booking.booking_confirmed == nil %>
+              <div class="card-product-dashboard w-100">
+                <%= cl_image_tag booking.machine.photos.first.key, height: 300, width: 400, crop: :fill %>
+                <div class="d-flex justify-content-around align-items-center w-100" >
+                  <div class="card-product-infos-dashboard" style="width: 300px">
+                    <h2><%= link_to booking.machine.name, machine_path(booking.machine), class:"blue-link" %></h2>
+                    <p><%= booking.machine.details %></p>
+                    <p><strong>Century :</strong> <%= booking.machine.period_century %>th</p>
+                    <p><strong>Year of travel :</strong> <%= booking.machine.period_specific %></p>
+                  </div>
+                  <div>
+                    <%= link_to "Accept booking", booking_path(booking), class: "btn-ghost",method: :patch, data: { confirm: "Are you sure?" } %>
+                  </div>
+                  <div>
+                    <p style="font-weight: lighter; font-size: 14px"><strong>from <%= booking.user.first_name %> <%= booking.user.last_name %>  <i class="fas fa-user"></i></strong></p>
+                  </div>
+                  <div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <%# <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="dashboard-part mb-4" id="dashboard-div2">
+      <div class="p">
+        <h4>Bookings confirmed</h4>
+      </div>
+      <div class="card-list d-flex flex-column" style="width: 900px">
+        <% requested_bookings = [] %>
+        <% @machines.each do |machine| %>
+          <% requested_bookings << machine.bookings %>
+        <% end %>
+        <% requested_bookings = requested_bookings.flatten %>
+        <% requested_bookings.each do |booking|%>
+          <% if booking.booking_confirmed == true %>
+            <div class="card-product-dashboard w-100">
+              <%= cl_image_tag booking.machine.photos.first.key, height: 300, width: 400, crop: :fill %>
+              <div class="d-flex justify-content-between align-items-center w-100" >
+                <div class="card-product-infos-dashboard" style="width: 500px">
+                  <h2><%= link_to booking.machine.name, machine_path(booking.machine), class:"blue-link" %></h2>
+                  <p><%= booking.machine.details %></p>
+                  <p><strong>Century :</strong> <%= booking.machine.period_century %>th</p>
+                  <p><strong>Year of travel :</strong> <%= booking.machine.period_specific %></p>
+                </div>
+                <div>
+                  <div class="d-flex flex-column align-items-center">
+                    <p id="confirmed" class="mb-1">Confirmed</p>
+                    <i class="far fa-check-circle" style="color: green"></i>
+                  </div>
+                </div>
+                <div>
+                  <%= link_to booking_path(booking),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } do  %>
+                    <i class="far fa-trash-alt" style="color: #031069"></i>
+                    <% end %>
+                </div>
+                <div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
