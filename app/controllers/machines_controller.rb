@@ -1,8 +1,14 @@
 class MachinesController < ApplicationController
   before_action :set_machine, only: [:show, :edit, :update, :destroy]
   def index
-    @machines = Machine.all
     @machines = policy_scope(Machine)
+    if params[:query].present?
+      @machines = @machines.where(period_century: params[:query])
+    end
+    ## if there is an input in form to do a query about the country
+    # if params[:query2].present?
+    #   @machines = @machines.where(place: params[:query2])
+    # end
     @markers = @machines.geocoded.map do |machine|
       {
         lat: machine.latitude,
