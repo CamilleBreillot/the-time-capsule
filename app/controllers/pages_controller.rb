@@ -9,4 +9,10 @@ class PagesController < ApplicationController
     @bookings = Booking.where(user_id: current_user)
     @machines = Machine.where(user_id: current_user)
   end
+
+  def request
+    @user = current_user
+    @bookings = Booking.where(user_id: current_user)
+    @machines = Machine.where(user_id: current_user)
+  end
 end

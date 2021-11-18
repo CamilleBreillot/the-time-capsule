@@ -1,0 +1,16 @@
+<div class="container" style="min-height: 80vh">
+  <h1 class="title-dashboard my-5" >Welcome to your dashboard <%= current_user.first_name if user_signed_in? %>!</h1>
+  <div class="container">
+    <ul class="list-inline tabs-underlined">
+      <li>
+        <a href="#" class="tab-underlined active">Bookings</a>
+      </li>
+      <li>
+        <a href="#" class="tab-underlined">Requests</a>
+      </li>
+      <li>
+        <%= link_to "Create a machine", new_machine_path, class: "tab-underlined" %>
+      </li>
+    </ul>
+  </div>
+</div>
