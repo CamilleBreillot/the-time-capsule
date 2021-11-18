@@ -13,3 +13,7 @@
 @import "components/index";
 @import "pages/index";
 @import "pages/dashboard";
+
+.content-wrapper {
+  min-height: calc(100vh - 70px - 80px);
+}
