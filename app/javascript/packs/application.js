@@ -18,3 +18,13 @@ require("channels")
 
 import "controllers"
 import "bootstrap"
+// import flatpickr from 'flatpickr'
+// import 'flatpickr/dist/flatpickr.min.css'
+
+flatpickr(".datepciker",{
+
+});
+
+// Flaypickr
+import { initFlatpickr } from "../plugins/flatpickr";
+initFlatpickr();

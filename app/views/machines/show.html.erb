@@ -29,15 +29,19 @@
       <p>Price per day: <%= @machine.price %> euros</p>
     </div>
 
-    <div class="container-2">
+    <div class="container-2" data-controller="total" data-action="change->total#getDepartureDate change->total#getArrivalDate">
       <h4 class="border-bottom pb-2">Book your travel</h4>
-
       <%= simple_form_for [@machine, @booking] do |f| %>
-          <%= f.input :arrival_date %>
-          <%= f.input :departure_date %>
-          <%= f.input :booking_price, input_html: { value: @machine.price }, label:"Total price (€)" %>
-          <%= f.submit "Book", class:"btn-ghost w-100" %>
-        <% end %>
+        <%= f.input :departure_date, as: :string,
+                    required: false,
+                    input_html: { class: "datepicker", data: { total_target: "departure"} }%>
+        <%= f.input :arrival_date, as: :string,
+                    required: false,
+                    input_html: {class: "datepicker" , data: { total_target: "arrival"}} %>
+        <%# <%= f.input :booking_price, input_html: { value: @machine.price }, label:"Total price (€)" %>
+        <%= f.submit "Book", class:"btn-ghost w-100" %>
+        <div data-total-target="duration"></div>
+      <% end %>
     </div>
 
   </div>

@@ -44,6 +44,9 @@ gem 'faker'
 
 gem "geocoder"
 
+# Flat Pickr
+gem 'flatpickr'
+
 
 group :development, :test do
   gem 'pry-byebug'
