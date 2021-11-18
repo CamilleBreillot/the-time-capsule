@@ -1,14 +1,58 @@
-<div class="container mt-4 w-50">
-  <h2 class="border-bottom pb-2 mb-4" style="color: #060B66">Add a new machine</h2>
+<div class=container style="min-height: 80vh">
+  <h1 class="title-dashboard my-5" >Welcome to your dashboard <%= current_user.first_name if user_signed_in? %>!</h1>
+  <div class="container">
 
-  <%= simple_form_for(@machine) do |f| %>
-      <%= f.input :name %>
-      <%= f.input :details %>
-      <%= f.input :period_century, label:"Century" %>
-      <%= f.input :period_specific, label:"Year of travel" %>
-      <%= f.input :price, label:"Price per day"  %>
-      <%= f.input :place, collection: @places %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-      <%= f.submit "Create your machine", class:"btn-ghost" %>
-    <% end %>
+    <ul class="list-inline tabs-underlined">
+      <li>
+        <%= link_to "Bookings", dashboard_path, class: "tab-underlined" %>
+      </li>
+      <li>
+        <%= link_to "Requests", bookingrequest_path, class: "tab-underlined" %>
+      </li>
+      <li>
+        <%= link_to "Create a machine", new_machine_path, class: "tab-underlined active" %>
+      </li>
+    </ul>
+    <div class="container my-5 w-200">
+
+      <div class="d-flex justify-content-around">
+        <div>
+          <h3 style="color: #060B66">All your machines</h3>
+          <div class="card-list d-flex flex-column" style="width: 700px">
+            <% @user.machines.each do |machine| %>
+            <div class="card-product-dashboard w-100">
+              <%= cl_image_tag machine.photos.first.key, height: 300, width: 400, crop: :fill %>
+                <div class="d-flex justify-content-between align-items-center" >
+                  <div class="card-product-infos-dashboard ml-2">
+                    <h2><%= link_to machine.name, machine_path(machine), class:"blue-link" %></h2>
+                    <p><%= machine.details %></p>
+                    <p><strong>Century :</strong> <%= machine.period_century %>th</p>
+                    <p><strong>Year of travel :</strong> <%= machine.period_specific %></p>
+                  </div>
+                <div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+        </div>
+        <div>
+          <div class="container-2">
+            <h2 class="border-bottom pb-2 mb-4" style="color: #060B66">Add a new machine</h2>
+
+            <%= simple_form_for(@machine) do |f| %>
+                <%= f.input :name %>
+                <%= f.input :details %>
+                <%= f.input :period_century, label:"Century" %>
+                <%= f.input :period_specific, label:"Year of travel" %>
+                <%= f.input :price, label:"Price per day"  %>
+                <%= f.input :place, collection: @places %>
+                <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+                <%= f.submit "Create your machine", class:"btn-ghost" %>
+              <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

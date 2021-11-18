@@ -26,14 +26,15 @@ class BookingsController < ApplicationController
   end
 
   def update
-    @booking.update(booking_params)
-    redirect_to machine_booking_path(@booking)
+    @booking.booking_confirmed = true
+    @booking.save!
     authorize @booking # for pundit
+    redirect_to bookingrequest_path
   end
 
   def destroy
     @booking.destroy
-    redirect_to machines_path
+    redirect_to dashboard_path
     authorize @booking # for pundit
   end
 
