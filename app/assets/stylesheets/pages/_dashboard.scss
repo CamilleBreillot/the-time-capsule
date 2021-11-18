@@ -15,3 +15,24 @@
   color: #060B66;
   text-align: center;
 }
+
+#confirmed {
+  color: green;
+  font-size: 14px;
+}
+
+#pending {
+  color:orange;
+  font-size: 14px;
+}
+
+.blue-link {
+ color: #031069;
+}
+
+.no-request {
+  color: darkgrey;
+  font-style: italic;
+  font-size: 22px;
+  font-weight: lighter;
+}

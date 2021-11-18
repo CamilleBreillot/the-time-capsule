@@ -16,7 +16,6 @@ aymeric = User.create(first_name: "Aymeric", last_name: "Payen", email: "aymeric
 
 puts "Users ok..."
 
-
 trump = Machine.create(user_id: margot.id, name: "Trump election", place: "US", price: 200, period_century: 21, period_specific: 2016, details: "Election of the worst president!" )
 file = URI.open("https://cdn-europe1.lanmedia.fr/var/europe1/storage/images/europe1/international/premiers-resultats-premieres-reactions-suivez-en-direct-les-elections-americaines-entre-donald-trump-et-hillary-clinton-2894840/29725457-262-fre-FR/Trump-a-deja-rendez-vous-au-Mexique.jpg")
 trump.photos.attach(io: file, filename: 'file1.jpeg', content_type: 'image/jpeg')
@@ -25,7 +24,7 @@ trump.photos.attach(io: file2, filename: 'file2.jpeg', content_type: 'image/jpeg
 file3 = URI.open("https://d2v9ipibika81v.cloudfront.net/uploads/sites/50/2016/06/whitehouse.jpg")
 trump.photos.attach(io: file3, filename: 'file3.jpeg', content_type: 'image/jpeg')
 
-hippy = Machine.create(user_id: camille.id, name: "Hippies in 70s", place: "SP", price: 450, period_century: 20, period_specific: 1975, details: "Live like a hippy!" )
+hippy = Machine.create(user_id: camille.id, name: "Hippies in 70s", place: "BR", price: 450, period_century: 20, period_specific: 1975, details: "Live like a hippy!" )
 file4 = URI.open("https://images.ladepeche.fr/api/v1/images/view/6104404bd286c218ec5d69c7/large/image.jpg?v=1")
 hippy.photos.attach(io: file4, filename: 'file4.jpeg', content_type: 'image/jpeg')
 file5 = URI.open("https://www.generations-plus.ch/sites/default/files/styles/image_principal_article/public/article/field/image/nom_ketane_race_batard_croisement_entre_un_boxer_et_un_labrador_sexe_male_age_10_ans_5.png?itok=eSxvCtVl")
@@ -40,6 +39,22 @@ file8 = URI.open("https://resize-elle.ladmedia.fr/rcrop/1098,768/img/var/plain_s
 louis.photos.attach(io: file8, filename: 'file8.jpeg', content_type: 'image/jpeg')
 file9 = URI.open("https://i.dailymail.co.uk/1s/2019/05/28/11/14047470-7077793-image-a-97_1559040638452.jpg")
 louis.photos.attach(io: file9, filename: 'file9.jpeg', content_type: 'image/jpeg')
+
+hiroshima = Machine.create(user_id: sophie.id, name: "Atomic Bombings of Hiroshima", place: "JP", price: 500, period_century: 20, period_specific: 1945, details: "Go back to the final year of World War II ans assist to the costly invasion of the Japanese mainland." )
+file10 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Atomic_bombing_of_Japan.jpg/2880px-Atomic_bombing_of_Japan.jpg")
+hiroshima.photos.attach(io: file10, filename: 'file10.jpeg', content_type: 'image/jpeg')
+file11 = URI.open("https://upload.wikimedia.org/wikipedia/commons/a/a0/Hiroshima_10km.jpg")
+hiroshima.photos.attach(io: file11, filename: 'file11.jpeg', content_type: 'image/jpeg')
+file12 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Boeing_B-29A-45-BN_Superfortress_44-61784_6_BG_24_BS_-_Incendiary_Journey.jpg/2560px-Boeing_B-29A-45-BN_Superfortress_44-61784_6_BG_24_BS_-_Incendiary_Journey.jpg")
+hiroshima.photos.attach(io: file12, filename: 'file12.jpeg', content_type: 'image/jpeg')
+
+concert = Machine.create(user_id: sophie.id, name: "Specatacular Prince Concert", place: "UK", price: 2000, period_century: 21, period_specific: 2004, details: "Prince Spectacular Concert" )
+file13 = URI.open("https://resize-parismatch.lanmedia.fr/r/625,417,forcex,center-middle/img/var/news/storage/images/paris-match/culture/musique/le-concert-de-prince-complet-en-77-minutes-170246/1859005-1-fre-FR/Le-concert-de-Prince-complet-en-77-minutes.jpg")
+concert.photos.attach(io: file13, filename: 'file13.jpeg', content_type: 'image/jpeg')
+file14 = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHZT0YAQA61nmPKcdaeMgl5uqMNnWHGQYZ8A&usqp=CAU")
+concert.photos.attach(io: file14, filename: 'file14.jpeg', content_type: 'image/jpeg')
+file15 = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJghz3K8CWENsALFghTmu9DBd_30rtCMuuzQ&usqp=CAU")
+concert.photos.attach(io: file15, filename: 'file15.jpeg', content_type: 'image/jpeg')
 
 war = Machine.create(user_id: aymeric.id, name: "End of World War II", place: "DE", price: 100, period_century: 20, period_specific: 1945, details: "Celebrating the end of Hitler!" )
 file10 = URI.open("https://www.historyonthenet.com/wp-content/uploads/2014/11/main-667816.jpg")

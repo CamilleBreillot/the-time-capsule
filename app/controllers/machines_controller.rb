@@ -7,7 +7,8 @@ class MachinesController < ApplicationController
       {
         lat: machine.latitude,
         lng: machine.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { machine: machine })
+        info_window: render_to_string(partial: "info_window", locals: { machine: machine }),
+        image_url: helpers.asset_url("neonmarker.png")
       }
     end
   end
@@ -20,6 +21,9 @@ class MachinesController < ApplicationController
     @booking = Booking.new
     @machine = Machine.new
     @places = CS.countries.values #lists countries from the gem 'city-state'
+    @user = current_user
+    @bookings = Booking.where(user_id: current_user)
+    @machines = Machine.where(user_id: current_user)
     authorize @machine
   end
 
