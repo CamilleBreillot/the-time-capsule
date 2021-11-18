@@ -18,11 +18,11 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def update?
-    user == record.user || user.admin
+    user == record.user || user.admin || Machine.where(user_id: record.user)
   end
 
   def destroy?
-    user == record.user || user.admin
+    user == record.user || user.admin || Machine.where(user_id: record.user)
   end
 
 end

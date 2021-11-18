@@ -20,6 +20,9 @@ class MachinesController < ApplicationController
     @booking = Booking.new
     @machine = Machine.new
     @places = CS.countries.values #lists countries from the gem 'city-state'
+    @user = current_user
+    @bookings = Booking.where(user_id: current_user)
+    @machines = Machine.where(user_id: current_user)
     authorize @machine
   end
 
