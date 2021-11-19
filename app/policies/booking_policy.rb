@@ -21,6 +21,10 @@ class BookingPolicy < ApplicationPolicy
     user == record.user || user.admin || Machine.where(user_id: record.user)
   end
 
+  def declinebooking?
+    user == record.user || user.admin || Machine.where(user_id: record.user)
+  end
+
   def destroy?
     user == record.user || user.admin || Machine.where(user_id: record.user)
   end
