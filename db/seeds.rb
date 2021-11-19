@@ -88,6 +88,38 @@ martin.photos.attach(io: file26, filename: 'file26.jpeg', content_type: 'image/j
 file27 = URI.open("https://www.investopedia.com/thmb/2W-EG94_uhx9ysAJX1Dbj7pTM7s=/680x382/smart/filters:no_upscale()/DMS1.18.19.2-5c45fbd4c9e77c0001264893.jpg")
 martin.photos.attach(io: file27, filename: 'file27.jpeg', content_type: 'image/jpeg')
 
+mars = Machine.create(user_id: margot.id, name: "Life on Mars (partnership with Stellar)", place: "MG", price: 2000, period_century: 22, period_specific: 2155, details: "Experiencing life on Mars with our descendants, in partnership with Stellar" )
+file28 = URI.open("https://static.euronews.com/articles/stories/05/98/20/46/1440x810_cmsv2_b2abb91f-286e-5cd5-a3eb-be7dde5f86e3-5982046.jpg")
+mars.photos.attach(io: file28, filename: 'file28.jpeg', content_type: 'image/jpeg')
+file29 = URI.open("https://static.bangkokpost.com/media/content/20211012/c1_4111987.jpg")
+mars.photos.attach(io: file29, filename: 'file29.jpeg', content_type: 'image/jpeg')
+file30 = URI.open("https://cryptonaute.fr/wp-content/uploads/2020/02/2020-02-28_09h17_52.jpg")
+mars.photos.attach(io: file30, filename: 'file30.jpeg', content_type: 'image/jpeg')
+
+covid = Machine.create(user_id: aymeric.id, name: "COVID-64", place: "RU", price: 250, period_century: 22, period_specific: 2120, details: "Live the COVID-64 pandemic and its numberless quarantines" )
+file31 = URI.open("https://akm-img-a-in.tosshub.com/indiatoday/images/story/202003/coronavirus_mental_health_reut.jpeg?aJFbSXCVDrjkbDaYshCHhDVsx._UFkII&size=770:433")
+covid.photos.attach(io: file31, filename: 'file31.jpeg', content_type: 'image/jpeg')
+file32 = URI.open("https://www.osce.org/files/imagecache/10_large_gallery/f/images/hires/d/0/461116.jpg?1597935020")
+covid.photos.attach(io: file32, filename: 'file32.jpeg', content_type: 'image/jpeg')
+file33 = URI.open("https://www.coe.int/documents/18550040/24135798/20200428-Online-First-regional.jpg/0ce96786-160d-ba7d-d874-b89cae70e603")
+covid.photos.attach(io: file33, filename: 'file33.jpeg', content_type: 'image/jpeg')
+
+cesar = Machine.create(user_id: margot.id, name: "Roman Empire with Cesar", place: "IT", price: 225, period_century: -1, period_specific: -52, details: "Live the victory of Cesar in Alesia" )
+file34 = URI.open("https://www.arretetonchar.fr/wp-content/uploads/2014/04/alain_delon_est_jules_cesar1_portrait_w532-532x330.jpg")
+cesar.photos.attach(io: file34, filename: 'file34.jpeg', content_type: 'image/jpeg')
+file35 = URI.open("https://i.f1g.fr/media/figarofr/orig/2014/05/19/PHO0559f34e-dccf-11e3-ab1d-365fee0d264d-805x453.jpg")
+cesar.photos.attach(io: file35, filename: 'file35.jpeg', content_type: 'image/jpeg')
+file36 = URI.open("http://www.slate.fr/sites/default/files/styles/1060x523/public/paris-2775427_1920.jpg")
+cesar.photos.attach(io: file36, filename: 'file36.jpeg', content_type: 'image/jpeg')
+
+cleopatre = Machine.create(user_id: aymeric.id, name: "Ancient Egypt with Cleopatra", place: "EG", price: 850, period_century: -10, period_specific: -1100, details: "Experience life in Ancient Egypt, go see the pyramids and meet Cleopatra" )
+file37 = URI.open("https://i.pinimg.com/originals/ea/90/f2/ea90f21f3173a25f9ef69913c615f8b4.jpg")
+cleopatre.photos.attach(io: file37, filename: 'file37.jpeg', content_type: 'image/jpeg')
+file38 = URI.open("https://medias.lavie.fr/api/v1/images/view/5f71a685d286c26fc849bdd8/width_1000/image.jpg")
+cleopatre.photos.attach(io: file38, filename: 'file38.jpeg', content_type: 'image/jpeg')
+file39 = URI.open("https://i.ytimg.com/vi/hO1tzmi1V5g/maxresdefault.jpg")
+cleopatre.photos.attach(io: file39, filename: 'file39.jpeg', content_type: 'image/jpeg')
+
 puts "Machines ok..."
 
 

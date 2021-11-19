@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [ :show, :update, :destroy ]
+  before_action :set_booking, only: [ :show, :update, :destroy, :declinebooking ]
 
   def show
     authorize @booking # for pundit
@@ -27,6 +27,13 @@ class BookingsController < ApplicationController
 
   def update
     @booking.booking_confirmed = true
+    @booking.save!
+    authorize @booking # for pundit
+    redirect_to bookingrequest_path
+  end
+
+  def declinebooking
+    @booking.booking_confirmed = false
     @booking.save!
     authorize @booking # for pundit
     redirect_to bookingrequest_path

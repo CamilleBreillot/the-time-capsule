@@ -2,22 +2,27 @@
   <h1 class="title-dashboard my-5" >Welcome to your dashboard <%= current_user.first_name if user_signed_in? %>!</h1>
   <div class="container">
 
-    <ul class="list-inline tabs-underlined">
+    <ul class="list-inline tabs-underlined mb-5">
       <li>
-        <%= link_to "Bookings", dashboard_path, class: "tab-underlined" %>
+        <%= link_to "Your bookings", dashboard_path, class: "tab-underlined" %>
       </li>
       <li>
-        <%= link_to "Requests", bookingrequest_path, class: "tab-underlined" %>
+        <%= link_to "Requests on your machines", bookingrequest_path, class: "tab-underlined" %>
       </li>
       <li>
-        <%= link_to "Create a machine", new_machine_path, class: "tab-underlined active" %>
+        <%= link_to "Add a new machine", new_machine_path, class: "tab-underlined active" %>
       </li>
     </ul>
+
+    <div class="d-flex justify-content-center">
+      <h5 class="pt-2 text-center get-ready">Got a spare machine? Rent it!</h5>
+    </div>
+
     <div class="container my-5 w-200">
 
       <div class="d-flex justify-content-around">
         <div>
-          <h3 style="color: #060B66">All your machines</h3>
+          <h3 style="color: #060B66">All your machines available for rent</h3>
           <div class="card-list d-flex flex-column" style="width: 700px">
             <% @user.machines.each do |machine| %>
             <div class="card-product-dashboard w-100">
@@ -38,7 +43,7 @@
         </div>
         <div>
           <div class="container-2">
-            <h2 class="border-bottom pb-2 mb-4" style="color: #060B66">Add a new machine</h2>
+            <h2 class="border-bottom pb-2 mb-4" style="color: #060B66">Add a new machine for rent</h2>
 
             <%= simple_form_for(@machine) do |f| %>
                 <%= f.input :name %>
