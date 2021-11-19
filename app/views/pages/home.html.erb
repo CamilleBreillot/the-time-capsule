@@ -11,12 +11,14 @@
 <div class="bannershow banner-bg">
   <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
   <h1 class="tagline">You can go anywhere, anytime...</h1>
-  <h1 class="tagline">Travel in
-    <span
-     class="txt-rotate mt-4"
-     data-period="2000"
-     data-rotate='[ "2021?", "1945?", "1650?", "2053?", "-2000?" ]'></span>
-  </h1>
+  <div data-controller='text-rotate'>
+    <h1 class="tagline">Travel in
+      <span
+      class="txt-rotate mt-4"
+      data-period="2000"
+      data-rotate='[ "2021?", "1945?", "1650?", "2053?", "-2000?" ]'></span>
+    </h1>
+  </div>
   <div class="container d-flex justify-content-center my-4">
     <%= form_tag machines_path, method: :get do %>
     <div class="search-form-control input-group d-flex">
@@ -35,14 +37,14 @@
 <div class="container my-5">
   <h1 class="title-card">Get inspired by some historical moment!</h1>
   <div class="container d-flex justify-content-between my-5">
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://medt-refresh.imgix.net/wp-content/uploads/2020/03/29014351/castle-ga.jpg?fit=crop&crop=faces,entropy,center&q=70&auto=format&or=0&fm=jpeg&w=348&h=232)">
-      Medieval Time
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1531777319985-9dca28eeae64?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2038&q=80)">
+      <%= link_to "Historical Rulers", machines_path, class: "nav-link-home hvr-grow-shadow" %>
     </div>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.britannica.com/66/154566-050-36E73C15/Times-Square-New-York-City.jpg)">
-      Modern Time
+      <%= link_to "Modern Time", machines_path, class: "nav-link-home hvr-grow-shadow" %>
     </div>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.wallpapersafari.com/53/5/nrcysp.jpg)">
-      Future
+      <%= link_to "Future", machines_path, class: "nav-link-home hvr-grow-shadow" %>
     </div>
   </div>
 </div>

@@ -39,6 +39,12 @@
   opacity: 1;
 }
 
+#btnallmach {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 3px 9px;
+}
+
 .btn-declined {
   color: #031069;
   background-color: white;
@@ -48,6 +54,10 @@
   font-weight: lighter;
   opacity: 1;
   transition: opacity 0.3s ease;
+}
+
+.fa-times-circle:before {
+  padding-left: 4px;
 }
 
 .btn-declined:hover {

@@ -1,12 +1,22 @@
 
 
 <div class="container mt-4">
-<h1>Available time machines</h1>
-<p class="border-bottom pb-3"><%= pluralize @machines.length, "machine" %> available for your dates</p>
+  <h1>Available time machines</h1>
+  <div class="border-bottom d-flex">
+    <% if @machines.length < Machine.all.length %>
+      <p id="btnallmach"><%= pluralize @machines.length, "machine" %> available for your dates
+        <%= link_to machines_path do  %>
+          <i class="far fa-times-circle hvr-grow-shadow align-items-baseline" style="font-size: 18px; color: #4A4A4A"></i>
+        <% end %>
+      </p>
+    <% else %>
+      <p><%= pluralize @machines.length, "machine" %> available for your dates </p>
+    <% end %>
+  </div>
   <div class="container d-flex">
     <div class="col-6">
       <ul>
-        <div class="row my-5">
+        <div class="row my-4">
           <% @machines.each do |machine| %>
             <div class="col-6">
             <%= link_to machine_path(machine) do %>
@@ -57,7 +67,7 @@
         </div>
       </ul>
     </div>
-    <div class="col-6 my-5 ms-4 mapbox"
+    <div class="col-6 my-4 ms-4 mapbox"
       data-controller="mapbox"
       data-mapbox-markers-value="<%= @markers.to_json %>"
       data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
