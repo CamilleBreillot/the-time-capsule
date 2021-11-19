@@ -14,7 +14,7 @@ class MachinesController < ApplicationController
         lat: machine.latitude,
         lng: machine.longitude,
         info_window: render_to_string(partial: "info_window", locals: { machine: machine }),
-        image_url: helpers.asset_url("neonmarker.png")
+        image_url: helpers.asset_url("chronometre.png")
       }
     end
   end
