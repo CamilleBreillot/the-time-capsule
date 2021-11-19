@@ -120,6 +120,30 @@ cleopatre.photos.attach(io: file38, filename: 'file38.jpeg', content_type: 'imag
 file39 = URI.open("https://i.ytimg.com/vi/hO1tzmi1V5g/maxresdefault.jpg")
 cleopatre.photos.attach(io: file39, filename: 'file39.jpeg', content_type: 'image/jpeg')
 
+sissi = Machine.create(user_id: margot.id, name: "Tea Time with Sissi", place: "AT", price: 550, period_century: 19, period_specific: 1845, details: "Relax with the empress Sissi and have lots of cakes" )
+file40 = URI.open("https://assets.afcdn.com/story/20191205/2034507_w960h720c1cx398cy369cxt0cyt0cxb960cyb720.jpg")
+sissi.photos.attach(io: file40, filename: 'file40.jpeg', content_type: 'image/jpeg')
+file41 = URI.open("https://assets.afcdn.com/story/20190722/2017198_w3872h2904c1cx2522cy1272cxt1095cyt0cxb3872cyb2592.jpg")
+sissi.photos.attach(io: file41, filename: 'file41.jpeg', content_type: 'image/jpeg')
+file42 = URI.open("https://static1.chateauversailles-spectacles.fr/events/1/22/71/@/les-f-c3-aates-galantes-c2-a9luc-morel-768x545px-event_item-1.jpg")
+sissi.photos.attach(io: file42, filename: 'file42.jpeg', content_type: 'image/jpeg')
+
+robot = Machine.create(user_id: margot.id, name: "Play with Robots", place: "CN", price: 1250, period_century: 22, period_specific: 2199, details: "Meet robots from the future and play around" )
+file43 = URI.open("https://cdn-mds.pickx.be/NewsFolder/w-700_h-500_s-1/1808151_62426_162.png")
+robot.photos.attach(io: file43, filename: 'file43.jpeg', content_type: 'image/jpeg')
+file44 = URI.open("https://wallpaperaccess.com/full/1224636.jpg")
+robot.photos.attach(io: file44, filename: 'file44.jpeg', content_type: 'image/jpeg')
+file45 = URI.open("https://www.dynamique-mag.com/wp-content/uploads/0cb16ff4389763bb7cbd7e227e1f87d8.jpg")
+robot.photos.attach(io: file45, filename: 'file45.jpeg', content_type: 'image/jpeg')
+
+town = Machine.create(user_id: aymeric.id, name: "Visit Luxembourg eco-city", place: "LU", price: 980, period_century: 22, period_specific: 2117, details: "Visit an eco-city of the future!" )
+file46 = URI.open("https://www.thesmartcityjournal.com/images/ecocities1.jpg")
+town.photos.attach(io: file46, filename: 'file46.jpeg', content_type: 'image/jpeg')
+file47 = URI.open("http://img.over-blog-kiwi.com/0/83/11/08/20150403/ob_e9e2d0_1xnqnqf.jpg")
+town.photos.attach(io: file47, filename: 'file47.jpeg', content_type: 'image/jpeg')
+file48 = URI.open("http://cdn.cnn.com/cnnnext/dam/assets/210107163426-04-tengah-singapore-restricted.jpg")
+town.photos.attach(io: file48, filename: 'file48.jpeg', content_type: 'image/jpeg')
+
 puts "Machines ok..."
 
 
