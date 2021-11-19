@@ -2,7 +2,7 @@
 
 <div class="container mt-4">
 <h1>Available time machines</h1>
-<p class="border-bottom pb-3"><%= @machines.length %> machines available for your dates</p>
+<p class="border-bottom pb-3"><%= pluralize @machines.length, "machine" %> available for your dates</p>
   <div class="container d-flex">
     <div class="col-6">
       <ul>
