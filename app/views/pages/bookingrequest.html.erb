@@ -15,7 +15,7 @@
 
     <div class="dashboard-part mb-4" id="dashboard-div2">
       <div class="p">
-        <h4>Pending requests</h4>
+        <h4 class="mt-1 border-bottom pb-1">Pending requests</h4>
       </div>
       <div class="card-list d-flex flex-column" style="width: 900px">
         <% requested_bookings = [] %>
@@ -38,7 +38,7 @@
                     <p><strong>Year of travel :</strong> <%= booking.machine.period_specific %></p>
                   </div>
                   <div>
-                    <%= link_to "Accept booking", booking_path(booking), class: "btn-ghost",method: :patch, data: { confirm: "Are you sure?" } %>
+                    <%= link_to "Accept booking", booking_path(booking), class: "btn-ghost hvr-grow-shadow",method: :patch, data: { confirm: "Are you sure?" } %>
                   </div>
                   <div>
                     <p style="font-weight: lighter; font-size: 14px"><strong>from <%= booking.user.first_name %> <%= booking.user.last_name %>  <i class="fas fa-user"></i></strong></p>
@@ -55,7 +55,7 @@
 
     <div class="dashboard-part mb-4" id="dashboard-div2">
       <div class="p">
-        <h4>Bookings confirmed</h4>
+        <h4 class="mt-1 border-bottom pb-1">Bookings confirmed</h4>
       </div>
       <div class="card-list d-flex flex-column" style="width: 900px">
         <% requested_bookings = [] %>
@@ -74,11 +74,9 @@
                   <p><strong>Century :</strong> <%= booking.machine.period_century %>th</p>
                   <p><strong>Year of travel :</strong> <%= booking.machine.period_specific %></p>
                 </div>
-                <div>
-                  <div class="d-flex flex-column align-items-center">
+                <div class="d-flex flex-column align-items-center">
                     <p id="confirmed" class="mb-1">Confirmed</p>
-                    <i class="far fa-check-circle" style="color: green"></i>
-                  </div>
+                    <i class="far fa-check-circle" style="color: green; font-size: 22px"></i>
                 </div>
                 <div>
                   <%= link_to booking_path(booking),
