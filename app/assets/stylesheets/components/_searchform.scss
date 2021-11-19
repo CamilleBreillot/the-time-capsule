@@ -1,14 +1,29 @@
 .search-form-control {
   position: relative;
-  width: 800px;
+  width: 400px;
   display: inline-block;
 }
 
 #search_query {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
-    font-size: 24px;
-    height: 64px;
+    font-size: 16px;
+    height: 50px;
+    text-indent: 20px;
+    text-align: center;
+    #period_century {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      border: #f4f4f4;
+      background-color: #f4f4f4;
+      text-align: center;
+      letter-spacing: 4px;
+      width: 300px;
+    }
 }
 
 .search-form-control .form-control {
@@ -20,8 +35,8 @@
 
 
 .search {
-  font-size: 24px;
-  height: 64px;
+  font-size: 16px;
+  height: 50px;
 }
 
 .search-form-control .form-control:focus {

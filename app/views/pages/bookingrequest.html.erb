@@ -1,20 +1,25 @@
 <div class="container" style="min-height: 80vh">
   <h1 class="title-dashboard my-5" >Welcome to your dashboard <%= current_user.first_name if user_signed_in? %>!</h1>
   <div class="container">
-    <ul class="list-inline tabs-underlined">
+    <ul class="list-inline tabs-underlined mb-5">
       <li>
-        <%= link_to "Bookings", dashboard_path, class: "tab-underlined" %>
+        <%= link_to "Your bookings", dashboard_path, class: "tab-underlined" %>
       </li>
       <li>
-        <a href="#" class="tab-underlined active">Requests</a>
+        <a href="#" class="tab-underlined active">Requests on your machines</a>
       </li>
       <li>
-        <%= link_to "Create a machine", new_machine_path, class: "tab-underlined" %>
+        <%= link_to "Add a new machine", new_machine_path, class: "tab-underlined" %>
       </li>
     </ul>
 
+    <div class="d-flex justify-content-center">
+      <h5 class="pt-2 text-center get-ready">Manage booking requests for your own machines</h5>
+    </div>
+
     <div class="dashboard-part mb-4" id="dashboard-div2">
-      <div class="p">
+      <div class="p d-flex align-items-baseline justify-content-between">
+        <i class="far fa-question-circle p-2" style="color: orange; font-size: 24px"></i>
         <h4 class="mt-1 border-bottom pb-1">Pending requests</h4>
       </div>
       <div class="card-list d-flex flex-column" style="width: 900px">
@@ -30,20 +35,15 @@
             <% if booking.booking_confirmed == nil %>
               <div class="card-product-dashboard w-100">
                 <%= cl_image_tag booking.machine.photos.first.key, height: 300, width: 400, crop: :fill %>
-                <div class="d-flex justify-content-around align-items-center w-100" >
+                <div class="d-flex justify-content-between align-items-center w-100" >
                   <div class="card-product-infos-dashboard" style="width: 300px">
                     <h2><%= link_to booking.machine.name, machine_path(booking.machine), class:"blue-link" %></h2>
                     <p><%= booking.machine.details %></p>
-                    <p><strong>Century :</strong> <%= booking.machine.period_century %>th</p>
-                    <p><strong>Year of travel :</strong> <%= booking.machine.period_specific %></p>
+                    <p><strong>request from <%= booking.user.first_name %> <%= booking.user.last_name %>  <i class="fas fa-user"></i></strong></p>
                   </div>
-                  <div>
-                    <%= link_to "Accept booking", booking_path(booking), class: "btn-ghost hvr-grow-shadow",method: :patch, data: { confirm: "Are you sure?" } %>
-                  </div>
-                  <div>
-                    <p style="font-weight: lighter; font-size: 14px"><strong>from <%= booking.user.first_name %> <%= booking.user.last_name %>  <i class="fas fa-user"></i></strong></p>
-                  </div>
-                  <div>
+                  <div style="width: 250px">
+                    <%= link_to "Accept booking", booking_path(booking), class: "btn-ghost hvr-grow-shadow mb-2",method: :patch, data: { confirm: "Are you sure?" } %>
+                    <p class="mx-2 m-2 px-2"><%= link_to "Decline booking", declinebooking_path(:id => booking.id), method: :patch, class: "btn-declined px-4 ml-3", data: { confirm: "Are you sure?" } %></p>
                   </div>
                 </div>
               </div>
@@ -54,7 +54,8 @@
     </div>
 
     <div class="dashboard-part mb-4" id="dashboard-div2">
-      <div class="p">
+      <div class="p d-flex align-items-baseline justify-content-between">
+        <i class="far fa-check-circle p-2" style="color: green; font-size: 22px"></i>
         <h4 class="mt-1 border-bottom pb-1">Bookings confirmed</h4>
       </div>
       <div class="card-list d-flex flex-column" style="width: 900px">
@@ -71,11 +72,10 @@
                 <div class="card-product-infos-dashboard" style="width: 500px">
                   <h2><%= link_to booking.machine.name, machine_path(booking.machine), class:"blue-link" %></h2>
                   <p><%= booking.machine.details %></p>
-                  <p><strong>Century :</strong> <%= booking.machine.period_century %>th</p>
-                  <p><strong>Year of travel :</strong> <%= booking.machine.period_specific %></p>
+                  <p><strong>request from <%= booking.user.first_name %> <%= booking.user.last_name %>  <i class="fas fa-user"></i></strong></p>
                 </div>
                 <div class="d-flex flex-column align-items-center">
-                    <p id="confirmed" class="mb-1">Confirmed</p>
+                    <p id="confirmed" class="mb-1">Booking confirmed</p>
                     <i class="far fa-check-circle" style="color: green; font-size: 22px"></i>
                 </div>
                 <div>
@@ -84,6 +84,42 @@
                     data: { confirm: "Are you sure?" } do  %>
                     <i class="far fa-trash-alt" style="color: #031069"></i>
                     <% end %>
+                </div>
+                <div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="dashboard-part mb-4" id="dashboard-div2">
+        <div class="p d-flex align-items-baseline justify-content-between">
+        <i class="far fa-times-circle p-2" style="color: red; font-size: 22px"></i>
+        <h4 class="mt-1 border-bottom pb-1">Bookings declined</h4>
+      </div>
+      <div class="card-list d-flex flex-column" style="width: 900px">
+        <% requested_bookings = [] %>
+        <% @machines.each do |machine| %>
+          <% requested_bookings << machine.bookings %>
+        <% end %>
+        <% requested_bookings = requested_bookings.flatten %>
+        <% requested_bookings.each do |booking|%>
+          <% if booking.booking_confirmed == false %>
+            <div class="card-product-dashboard w-100">
+              <%= cl_image_tag booking.machine.photos.first.key, height: 300, width: 400, crop: :fill %>
+              <div class="d-flex justify-content-between align-items-center w-100" >
+                <div class="card-product-infos-dashboard" style="width: 500px">
+                  <h2><%= link_to booking.machine.name, machine_path(booking.machine), class:"blue-link" %></h2>
+                  <p><%= booking.machine.details %></p>
+                  <p><strong>request from <%= booking.user.first_name %> <%= booking.user.last_name %>  <i class="fas fa-user"></i></strong></p>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                    <p id="declined" class="mb-1">Booking declined</p>
+                    <i class="far fa-times-circle" style="color: red; font-size: 22px"></i>
+                </div>
+                <div>
                 </div>
                 <div>
                 </div>
