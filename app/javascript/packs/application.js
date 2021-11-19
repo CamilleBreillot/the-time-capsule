@@ -88,4 +88,3 @@ flatpickr(".datepciker",{
 // Flaypickr
 import { initFlatpickr } from "../plugins/flatpickr";
 initFlatpickr();
-

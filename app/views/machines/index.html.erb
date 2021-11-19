@@ -1,17 +1,17 @@
 
 
 <div class="container mt-4">
-<h1>Available time machines</h1>
+  <h1>Available time machines</h1>
   <div class="border-bottom d-flex">
-    <% if @machines.length < @machines.all.length %>
-    <p id="btnallmach"><%= pluralize @machines.length, "machine" %> available for your dates
-    <%= link_to machines_path,
-        method: :get do  %>
-        <i class="far fa-times-circle hvr-grow-shadow align-items-baseline" style="font-size: 18px; color: #4A4A4A"></i>
+    <% if @machines.length < Machine.all.length %>
+      <p id="btnallmach"><%= pluralize @machines.length, "machine" %> available for your dates
+        <%= link_to machines_path do  %>
+          <i class="far fa-times-circle hvr-grow-shadow align-items-baseline" style="font-size: 18px; color: #4A4A4A"></i>
         <% end %>
-      <% else %>
-        <p><%= pluralize @machines.length, "machine" %> available for your dates </p>
-      <% end %>
+      </p>
+    <% else %>
+      <p><%= pluralize @machines.length, "machine" %> available for your dates </p>
+    <% end %>
   </div>
   <div class="container d-flex">
     <div class="col-6">
