@@ -11,12 +11,14 @@
 <div class="bannershow banner-bg">
   <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
   <h1 class="tagline">You can go anywhere, anytime...</h1>
-  <h1 class="tagline">Travel in
-    <span
-     class="txt-rotate mt-4"
-     data-period="2000"
-     data-rotate='[ "2021?", "1945?", "1650?", "2053?", "-2000?" ]'></span>
-  </h1>
+  <div data-controller='text-rotate'>
+    <h1 class="tagline">Travel in
+      <span
+      class="txt-rotate mt-4"
+      data-period="2000"
+      data-rotate='[ "2021?", "1945?", "1650?", "2053?", "-2000?" ]'></span>
+    </h1>
+  </div>
   <div class="container d-flex justify-content-center my-4">
     <%= form_tag machines_path, method: :get do %>
     <div class="search-form-control input-group d-flex">
