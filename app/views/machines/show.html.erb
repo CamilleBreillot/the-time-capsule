@@ -31,26 +31,31 @@
       </div>
     </div>
 
+    <div data-controller='coucou'></div>
+
+    <div data-controller="flatpickr"></div>
     <div class="d-flex justify-content-around">
       <div class="container-2" data-controller="total" data-action="change->total#getDepartureDate change->total#getArrivalDate" data-total-price-value= <%=@machine.price%>>
         <h4 class="border-bottom pb-2">Book your travel</h4>
-        <%= simple_form_for [@machine, @booking] do |f| %>
-          <%= f.input :departure_date, as: :string,
-                      :label => "Choose your booking dates :",
-                      required: false,
-                      placeholder: 'Pick-up date',
-                      input_html: { class: "datepicker", data: { total_target: "departure"} }%>
-          <%= f.input :arrival_date, as: :string,
-                      label: false,
-                      required: false,
-                      placeholder: 'Return date',
-                      input_html: {class: "datepicker" , data: { total_target: "arrival"}} %>
-          <div class="border-bottom" data-total-target="totalPrice">
-          </div>
-          <div class= "mt-2">
-            <%= f.submit "Book", class:"btn-ghost w-100" %>
-          </div>
-        <% end %>
+        <div>
+          <%= simple_form_for [@machine, @booking] do |f| %>
+            <%= f.input :departure_date, as: :string,
+                        :label => "Choose your booking dates :",
+                        required: false,
+                        placeholder: 'Pick-up date',
+                        input_html: { class: "datepicker", data: { total_target: "departure" } }%>
+            <%= f.input :arrival_date, as: :string,
+                        label: false,
+                        required: false,
+                        placeholder: 'Return date',
+                        input_html: {class: "datepicker" , data: { total_target: "arrival" } } %>
+            <div class="border-bottom" data-total-target="totalPrice">
+            </div>
+            <div class= "mt-30">
+              <%= f.submit "Book", class:"btn-ghost w-100" %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
@@ -101,7 +106,7 @@
         <% machine.user_id==@machine.user_id && machine.name !=@machine.name %>
       <% end %>
       <div class="container my-5">
-        <div class="container d-flex justify-content-between my-5">
+        <div class="container d-flex justify-content-evenly my-5">
           <% if usermachines.size != 0 %>
             <% usermachines.each do |machine| %>
               <%= link_to machine_path(machine) do %>
