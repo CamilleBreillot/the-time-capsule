@@ -8,6 +8,9 @@ export default class extends Controller {
   //   // this.outputTarget.textContent = 'Hello, Total'
 
   // }
+  connect() {
+    console.log("hello")
+  }
   getArrivalDate(event) {
     //console.log(event)
     console.log(this.totalPrice)
@@ -18,9 +21,9 @@ export default class extends Controller {
     // console.log(event)
     const arrivalDateMilliseconds = Date.parse(this.arrivalTarget.defaultValue)
     const arrivalDate = arrivalDateMilliseconds / (1000 * 60 * 60 * 24)
-    // console.log(arrivalDate)
+    console.log(arrivalDate)
     if (this.departureTarget.value && this.arrivalTarget.value) {
-      // console.log((arrivalDate-departureDate)*this.priceValue)
+      console.log((arrivalDate-departureDate)*this.priceValue)
       if (this.totalPriceTarget.hasChildNodes()) {
         this.totalPriceTarget.removeChild(this.totalPriceTarget.childNodes[0]);
       }

@@ -81,11 +81,12 @@ window.onload = function () {
 // import flatpickr from 'flatpickr'
 // import 'flatpickr/dist/flatpickr.min.css'
 
-flatpickr(".datepciker",{
+// flatpickr(".datepciker",{
+//   altInput: true,
+//   minDate: "today",
 
-});
+// });
 
-// Flaypickr
-import { initFlatpickr } from "../plugins/flatpickr";
-initFlatpickr();
-
+// // Flaypickr
+// import { initFlatpickr } from "../plugins/flatpickr";
+// initFlatpickr();
