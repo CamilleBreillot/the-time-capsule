@@ -2,8 +2,8 @@ class MachinesController < ApplicationController
   before_action :set_machine, only: [:show, :edit, :update, :destroy]
   def index
     @machines = policy_scope(Machine)
-    if params[:query].present?
-      @machines = @machines.where(period_century: params[:query])
+    if params[:period_century].present?
+      @machines = @machines.where(period_century: params[:period_century])
     end
     ## if there is an input in form to do a query about the country
     # if params[:query2].present?
