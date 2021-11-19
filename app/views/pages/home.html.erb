@@ -21,7 +21,7 @@
     <%= form_tag machines_path, method: :get do %>
     <div class="search-form-control input-group d-flex">
     <div class= "form-control p-2", id= "search_query">
-      <%= select_tag :period_century, options_for_select([["17th century", 17],["18th century", 18], ["19th century", 19],["20th century", 20],["22th century", 21],["21th century", 22]]) %>
+      <%= select_tag :period_century, options_for_select([["Select a century", ],["17th  century", 17],["18th  century", 18], ["19th  century", 19],["20th  century", 20],["21th  century", 21],["22th century", 22]]) %>
     </div>
       <%# <%= text_field_tag :query, params[:query], class: "form-control p-2", id: "search_query", placeholder: "In which century do you want to travel?"%>
         <%# <%= text_field_tag :query2, params[:query2], class: "form-control p-2", placeholder: "In which country do you want to travel?"%>
