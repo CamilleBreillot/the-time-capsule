@@ -9,12 +9,12 @@
         <a href="#" class="tab-underlined active">Requests on your machines</a>
       </li>
       <li>
-        <%= link_to "Rent a new machine", new_machine_path, class: "tab-underlined" %>
+        <%= link_to "Add a new machine", new_machine_path, class: "tab-underlined" %>
       </li>
     </ul>
 
     <div class="d-flex justify-content-center">
-      <h5 class="pt-2 text-center get-ready">Manage booking requests from your own machines</h5>
+      <h5 class="pt-2 text-center get-ready">Manage booking requests for your own machines</h5>
     </div>
 
     <div class="dashboard-part mb-4" id="dashboard-div2">
@@ -75,7 +75,7 @@
                   <p><strong>request from <%= booking.user.first_name %> <%= booking.user.last_name %>  <i class="fas fa-user"></i></strong></p>
                 </div>
                 <div class="d-flex flex-column align-items-center">
-                    <p id="confirmed" class="mb-1">Confirmed</p>
+                    <p id="confirmed" class="mb-1">Booking confirmed</p>
                     <i class="far fa-check-circle" style="color: green; font-size: 22px"></i>
                 </div>
                 <div>
@@ -116,7 +116,7 @@
                   <p><strong>request from <%= booking.user.first_name %> <%= booking.user.last_name %>  <i class="fas fa-user"></i></strong></p>
                 </div>
                 <div class="d-flex flex-column align-items-center">
-                    <p id="declined" class="mb-1">Declined</p>
+                    <p id="declined" class="mb-1">Booking declined</p>
                     <i class="far fa-times-circle" style="color: red; font-size: 22px"></i>
                 </div>
                 <div>
