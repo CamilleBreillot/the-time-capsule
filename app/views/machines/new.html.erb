@@ -20,10 +20,10 @@
 
     <div class="container my-5 w-200">
 
-      <div class="d-flex justify-content-around">
+      <div class="d-flex justify-content-between">
         <div>
           <h3 style="color: #060B66">All your machines available for rent</h3>
-          <div class="card-list d-flex flex-column" style="width: 700px">
+          <div class="card-list d-flex flex-column" style="width: 500px">
             <% @user.machines.each do |machine| %>
             <div class="card-product-dashboard w-100">
               <%= cl_image_tag machine.photos.first.key, height: 300, width: 400, crop: :fill %>
@@ -42,8 +42,8 @@
       </div>
         </div>
         <div>
-          <div class="container-2">
-            <h2 class="border-bottom pb-2 mb-4" style="color: #060B66">Add a new machine for rent</h2>
+          <div class="container-2" style="width: 450px">
+            <h3 class="border-bottom pb-2 mb-4" style="color: #060B66">Add a new machine for rent</h3>
 
             <%= simple_form_for(@machine) do |f| %>
                 <%= f.input :name %>
